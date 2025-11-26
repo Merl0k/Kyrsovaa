@@ -1,93 +1,119 @@
+using Domain.Models;
+using Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Domain.Models;
-using Infrastructure;
-using Infrastructure.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 namespace Services
 {
     /// <summary>
-    /// Сервис с бизнес-логикой и отчётами.
+    /// Сервис по работе с посещаемостью и студентами
     /// </summary>
     public class AttendanceService
     {
         private readonly AppDbContext _db;
-        private readonly GenericRepository<Student> _studentRepo;
-        private readonly GenericRepository<Attendance> _attendanceRepo;
-        private readonly GenericRepository<ClassSession> _sessionRepo;
-        private readonly GenericRepository<Group> _groupRepo;
-
         public AttendanceService(AppDbContext db)
         {
             _db = db;
-            _studentRepo = new GenericRepository<Student>(_db);
-            _attendanceRepo = new GenericRepository<Attendance>(_db);
-            _sessionRepo = new GenericRepository<ClassSession>(_db);
-            _groupRepo = new GenericRepository<Group>(_db);
         }
 
-        /// <summary>
-        /// Возвращает процент посещаемости каждого студента (0..100).
-        /// </summary>
-        public IEnumerable<(Student student, double percent)> GetAttendancePercentPerStudent()
-        {
-            var students = _db.Students.Include(s => s.Attendances).ThenInclude(a => a.ClassSession).Include(s => s.Group).ToList();
+        // CRUD Students
+        public IEnumerable<Student> GetAllStudents() =>
+            _db.Students.Include(s => s.Group).ToList();
 
-            var results = students.Select(s =>
+        public Student? GetStudent(int id) =>
+            _db.Students.Include(s => s.Group).FirstOrDefault(s => s.Id == id);
+
+        public void AddStudent(Student s)
+        {
+            _db.Students.Add(s);
+            _db.SaveChanges();
+        }
+
+        public void UpdateStudent(Student s)
+        {
+            _db.Students.Update(s);
+            _db.SaveChanges();
+        }
+
+        public void DeleteStudent(int id)
+        {
+            var s = _db.Students.Find(id);
+            if (s != null)
             {
-                var total = s.Attendances.Count;
-                var present = s.Attendances.Count(a => a.IsPresent);
-                double percent = total == 0 ? 0.0 : (present * 100.0) / total;
+                _db.Students.Remove(s);
+                _db.SaveChanges();
+            }
+        }
+
+        // Sessions
+        public IEnumerable<ClassSession> GetSessionsForGroup(int groupId) =>
+            _db.ClassSessions.Where(cs => cs.GroupId == groupId).Include(cs => cs.Attendances).ToList();
+
+        public void AddSession(ClassSession cs)
+        {
+            _db.ClassSessions.Add(cs);
+            _db.SaveChanges();
+        }
+
+        // Attendance marking
+        public void MarkAttendance(int sessionId, int studentId, bool present)
+        {
+            var att = _db.Attendances.FirstOrDefault(a => a.ClassSessionId == sessionId && a.StudentId == studentId);
+            if (att == null)
+            {
+                att = new Attendance { ClassSessionId = sessionId, StudentId = studentId, IsPresent = present };
+                _db.Attendances.Add(att);
+            }
+            else
+            {
+                att.IsPresent = present;
+                _db.Attendances.Update(att);
+            }
+            _db.SaveChanges();
+        }
+
+        // Reports
+        public double GetStudentAttendancePercent(int studentId)
+        {
+            var total = _db.Attendances.Count(a => a.StudentId == studentId);
+            if (total == 0) return 0.0;
+            var present = _db.Attendances.Count(a => a.StudentId == studentId && a.IsPresent);
+            return (double)present / total * 100.0;
+        }
+
+        public IEnumerable<(Student student, double percent)> GetWorstStudents(int top = 5)
+        {
+            var students = _db.Students.Include(s => s.Attendances).ToList();
+            var q = students.Select(s =>
+            {
+                var total = s.Attendances?.Count() ?? 0;
+                var present = s.Attendances?.Count(a => a.IsPresent) ?? 0;
+                var percent = total == 0 ? 0.0 : (double)present / total * 100.0;
                 return (student: s, percent);
             })
-            .OrderByDescending(x => x.percent);
-
-            return results;
+            .OrderBy(x => x.percent)
+            .Take(top);
+            return q;
         }
 
-        /// <summary>
-        /// Находит N студентов с худшей посещаемостью.
-        /// </summary>
-        public IEnumerable<(Student student, double percent)> GetWorstStudents(int topN = 5)
-        {
-            return GetAttendancePercentPerStudent().OrderBy(x => x.percent).Take(topN);
-        }
-
-        /// <summary>
-        /// Отчёт по группам: средний процент посещаемости группы и список студентов.
-        /// </summary>
-        public IEnumerable<(Group group, double avgPercent, List<(Student student, double percent)> members)> GetReportByGroups()
+        public IEnumerable<(Group group, double avgPercent, IEnumerable<(Student student, double percent)> members)> ReportByGroup()
         {
             var groups = _db.Groups.Include(g => g.Students).ThenInclude(s => s.Attendances).ToList();
-            var report = new List<(Group, double, List<(Student, double)>)>();
-
             foreach (var g in groups)
             {
-                var members = g.Students.Select(s =>
+                var members = g.Students?.Select(s =>
                 {
-                    var total = s.Attendances.Count;
-                    var present = s.Attendances.Count(a => a.IsPresent);
-                    double p = total == 0 ? 0.0 : (present * 100.0) / total;
-                    return (s, p);
-                }).ToList();
+                    var total = s.Attendances?.Count() ?? 0;
+                    var present = s.Attendances?.Count(a => a.IsPresent) ?? 0;
+                    var percent = total == 0 ? 0.0 : (double)present / total * 100.0;
+                    return (student: s, percent);
+                }) ?? Enumerable.Empty<(Student, double)>();
 
-                double avg = members.Count == 0 ? 0.0 : members.Average(m => m.Item2);
-                report.Add((g, avg, members));
+                var avg = members.Any() ? members.Average(m => m.percent) : 0.0;
+                yield return (g, avg, members);
             }
-
-            return report;
         }
-
-        // Дополнительно: CRUD-обёртки, помогающие UI
-        public void AddStudent(Student s) { _studentRepo.Add(s); _studentRepo.SaveChanges(); }
-        public void AddGroup(Group g) { _groupRepo.Add(g); _groupRepo.SaveChanges(); }
-        public void AddSession(ClassSession cs) { _sessionRepo.Add(cs); _sessionRepo.SaveChanges(); }
-        public void AddAttendance(Attendance a) { _attendanceRepo.Add(a); _attendanceRepo.SaveChanges(); }
-
-        public IEnumerable<Student> GetAllStudents() => _studentRepo.GetAll();
-        public IEnumerable<Group> GetAllGroups() => _groupRepo.GetAll();
-        public IEnumerable<ClassSession> GetAllSessions() => _sessionRepo.GetAll();
     }
 }

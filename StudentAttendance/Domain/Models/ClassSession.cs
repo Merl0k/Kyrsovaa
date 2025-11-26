@@ -4,18 +4,16 @@ using System.Collections.Generic;
 namespace Domain.Models
 {
     /// <summary>
-    /// Одно занятие (дата, предмет, группа).
+    /// Занятие / пара
     /// </summary>
     public class ClassSession
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
-        public string Subject { get; set; } = string.Empty;
-
-        /// <summary>Группа, для которой проводилось занятие.</summary>
+        public string Topic { get; set; } = string.Empty;
         public int GroupId { get; set; }
         public Group? Group { get; set; }
 
-        public List<Attendance> Attendances { get; set; } = new();
+        public ICollection<Attendance>? Attendances { get; set; }
     }
 }

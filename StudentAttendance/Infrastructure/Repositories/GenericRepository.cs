@@ -1,12 +1,11 @@
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using Domain.Interfaces;
-using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Repositories
+namespace Infrastructure
 {
     /// <summary>
-    /// Generic репозиторий, реализует IRepository.
+    /// Generic repository реализация на EF Core
     /// </summary>
     public class GenericRepository<T> : IRepository<T> where T : class
     {
@@ -16,36 +15,34 @@ namespace Infrastructure.Repositories
         public GenericRepository(AppDbContext context)
         {
             _context = context;
-            _dbSet = _context.Set<T>();
+            _dbSet = context.Set<T>();
         }
 
-        public virtual IEnumerable<T> GetAll()
+        public IEnumerable<T> GetAll()
         {
             return _dbSet.AsNoTracking().ToList();
         }
 
-        public virtual T? GetById(int id)
+        public T? GetById(int id)
         {
             return _dbSet.Find(id);
         }
 
-        public virtual void Add(T entity)
+        public void Add(T entity)
         {
             _dbSet.Add(entity);
+            _context.SaveChanges();
         }
 
-        public virtual void Update(T entity)
+        public void Update(T entity)
         {
             _dbSet.Update(entity);
+            _context.SaveChanges();
         }
 
-        public virtual void Delete(T entity)
+        public void Delete(T entity)
         {
             _dbSet.Remove(entity);
-        }
-
-        public virtual void SaveChanges()
-        {
             _context.SaveChanges();
         }
     }

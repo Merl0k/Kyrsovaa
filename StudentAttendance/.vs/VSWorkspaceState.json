@@ -7,8 +7,10 @@
     "\\Domain\\Models",
     "\\Infrastructure",
     "\\Infrastructure\\Repositories",
-    "\\Services"
+    "\\Migrations",
+    "\\Services",
+    "\\UI"
   ],
-  "SelectedNode": "\\Program.cs",
+  "SelectedNode": "\\student_attendance.db-shm",
   "PreviewInSolutionExplorer": false
 }
