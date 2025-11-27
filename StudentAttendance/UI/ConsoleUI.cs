@@ -31,7 +31,12 @@ namespace UI
                 Console.WriteLine("5 - Отчет по группам");
                 Console.WriteLine("6 - Список групп");
                 Console.WriteLine("7 - Добавить группу");
-                Console.WriteLine("0 - Выход");
+                Console.WriteLine("8 - Редактировать студента");
+                Console.WriteLine("9 - Удалить студента");
+                Console.WriteLine("10 - Редактировать группу по имени");
+                Console.WriteLine("11 - Удалить группу");
+                Console.WriteLine("12 - Выход");
+                Console.WriteLine("13 - Выход");
                 Console.Write("Выбор: ");
 
                 var choice = Console.ReadLine();
@@ -45,9 +50,8 @@ namespace UI
                     case "2":
                         Console.Write("Имя студента: ");
                         string fullName = Console.ReadLine()!;
-                        Console.Write("Группа (введи имя группы ИЛИ её ID): ");
+                        Console.Write("Группа (имя или ID): ");
                         string groupInput = Console.ReadLine()!;
-                        // StudentService.AddStudent умеет принимать и имя, и id в виде строки
                         _studentService.AddStudent(fullName, groupInput);
                         break;
 
@@ -118,6 +122,38 @@ namespace UI
                         string groupName = Console.ReadLine()!;
                         _groupService.AddGroup(groupName);
                         break;
+
+                    case "8": // Новый пункт "Редактировать студента"
+                        Console.Write("ID студента для редактирования: ");
+                        int editId = int.Parse(Console.ReadLine()!);
+                        Console.Write("Новое имя (Enter чтобы пропустить): ");
+                        string? newName = Console.ReadLine();
+                        Console.Write("Новая группа (имя или ID, Enter чтобы пропустить): ");
+                        string? newGroup = Console.ReadLine();
+                        _studentService.EditStudent(editId, newName, newGroup);
+                        break;
+
+                    case "9": // Удалить студента
+                        Console.Write("ID студента для удаления: ");
+                        int delId = int.Parse(Console.ReadLine()!);
+                        _studentService.DeleteStudent(delId);
+                        break;
+
+                    case "10": // Редактировать группу по имени
+                        Console.Write("Введите текущее имя группы: ");
+                        string currentName = Console.ReadLine()!;
+                        Console.Write("Введите новое имя группы: ");
+                        string newGroupName = Console.ReadLine()!; // <--- новое имя переменной
+                        _groupService.EditGroupByName(currentName, newGroupName);
+                        break;
+
+
+                    case "11": // Удалить группу
+                        Console.Write("ID группы для удаления: ");
+                        int delGid = int.Parse(Console.ReadLine()!);
+                        _groupService.DeleteGroup(delGid);
+                        break;
+
 
                     case "0": return;
 

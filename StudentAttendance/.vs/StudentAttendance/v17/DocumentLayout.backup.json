@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\StudentAttendance\\StudentAttendance\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Services\\StudentService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\StudentService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\GroupReport.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GroupReport.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\UI\\ConsoleUI.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,48 +15,52 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\AttendanceService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Domain\\Models\\Student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Domain\\Models\\Student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Domain\\Models\\Group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Domain\\Models\\Group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Services\\GroupService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\GroupService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Infrastructure\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Domain\\Models\\ClassSession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Domain\\Models\\ClassSession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\StudentAttendance.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StudentAttendance.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Services\\StudentService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\StudentService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Data\\SeedData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Data\\SeedData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Domain\\Models\\Attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Domain\\Models\\Attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Domain\\Models\\ClassSession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Domain\\Models\\ClassSession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Domain\\Models\\Group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Domain\\Models\\Group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Domain\\Models\\Student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Domain\\Models\\Student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Infrastructure\\Repositories\\GenericRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\Repositories\\GenericRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Infrastructure\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Infrastructure\\IRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\IRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Domain\\Models\\Attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Domain\\Models\\Attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\StudentAttendance.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StudentAttendance.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\StudentAttendance\\StudentAttendance\\Domain\\Models\\Person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -79,31 +83,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GroupReport.txt",
+              "DocumentMoniker": "D:\\StudentAttendance\\StudentAttendance\\GroupReport.txt",
+              "RelativeDocumentMoniker": "GroupReport.txt",
+              "ToolTip": "D:\\StudentAttendance\\StudentAttendance\\GroupReport.txt",
+              "RelativeToolTip": "GroupReport.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-11-27T11:04:21.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "StudentService.cs",
               "DocumentMoniker": "D:\\StudentAttendance\\StudentAttendance\\Services\\StudentService.cs",
               "RelativeDocumentMoniker": "Services\\StudentService.cs",
               "ToolTip": "D:\\StudentAttendance\\StudentAttendance\\Services\\StudentService.cs",
               "RelativeToolTip": "Services\\StudentService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAmwDQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-26T21:44:21.567Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "GroupService.cs",
               "DocumentMoniker": "D:\\StudentAttendance\\StudentAttendance\\Services\\GroupService.cs",
               "RelativeDocumentMoniker": "Services\\GroupService.cs",
               "ToolTip": "D:\\StudentAttendance\\StudentAttendance\\Services\\GroupService.cs",
               "RelativeToolTip": "Services\\GroupService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACEAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T21:32:48.261Z"
+              "WhenOpened": "2025-11-26T21:32:48.261Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "StudentAttendance.csproj",
               "DocumentMoniker": "D:\\StudentAttendance\\StudentAttendance\\StudentAttendance.csproj",
               "RelativeDocumentMoniker": "StudentAttendance.csproj",
@@ -121,22 +139,23 @@
               "RelativeDocumentMoniker": "UI\\ConsoleUI.cs",
               "ToolTip": "D:\\StudentAttendance\\StudentAttendance\\UI\\ConsoleUI.cs",
               "RelativeToolTip": "UI\\ConsoleUI.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAWwGQAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-26T14:59:16.562Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "SeedData.cs",
               "DocumentMoniker": "D:\\StudentAttendance\\StudentAttendance\\Data\\SeedData.cs",
               "RelativeDocumentMoniker": "Data\\SeedData.cs",
               "ToolTip": "D:\\StudentAttendance\\StudentAttendance\\Data\\SeedData.cs",
               "RelativeToolTip": "Data\\SeedData.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAADwvygAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T10:15:24.496Z"
+              "WhenOpened": "2025-11-25T10:15:24.496Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -146,34 +165,36 @@
               "RelativeDocumentMoniker": "Services\\AttendanceService.cs",
               "ToolTip": "D:\\StudentAttendance\\StudentAttendance\\Services\\AttendanceService.cs",
               "RelativeToolTip": "Services\\AttendanceService.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAmwJIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-25T10:15:02.824Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "GenericRepository.cs",
               "DocumentMoniker": "D:\\StudentAttendance\\StudentAttendance\\Infrastructure\\Repositories\\GenericRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\GenericRepository.cs",
               "ToolTip": "D:\\StudentAttendance\\StudentAttendance\\Infrastructure\\Repositories\\GenericRepository.cs",
               "RelativeToolTip": "Infrastructure\\Repositories\\GenericRepository.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAADwvzEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T10:14:32.121Z"
+              "WhenOpened": "2025-11-25T10:14:32.121Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\StudentAttendance\\StudentAttendance\\Infrastructure\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Infrastructure\\AppDbContext.cs",
               "ToolTip": "D:\\StudentAttendance\\StudentAttendance\\Infrastructure\\AppDbContext.cs",
               "RelativeToolTip": "Infrastructure\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T10:13:49.176Z"
+              "WhenOpened": "2025-11-25T10:13:49.176Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -185,11 +206,12 @@
               "RelativeToolTip": "Infrastructure\\IRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T10:13:36.685Z"
+              "WhenOpened": "2025-11-25T10:13:36.685Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 6,
               "Title": "Attendance.cs",
               "DocumentMoniker": "D:\\StudentAttendance\\StudentAttendance\\Domain\\Models\\Attendance.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\Attendance.cs",
@@ -197,11 +219,12 @@
               "RelativeToolTip": "Domain\\Models\\Attendance.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T10:12:50.864Z"
+              "WhenOpened": "2025-11-25T10:12:50.864Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "ClassSession.cs",
               "DocumentMoniker": "D:\\StudentAttendance\\StudentAttendance\\Domain\\Models\\ClassSession.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\ClassSession.cs",
@@ -209,11 +232,12 @@
               "RelativeToolTip": "Domain\\Models\\ClassSession.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T10:12:38.4Z"
+              "WhenOpened": "2025-11-25T10:12:38.4Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Group.cs",
               "DocumentMoniker": "D:\\StudentAttendance\\StudentAttendance\\Domain\\Models\\Group.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\Group.cs",
@@ -221,11 +245,12 @@
               "RelativeToolTip": "Domain\\Models\\Group.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T10:12:25.432Z"
+              "WhenOpened": "2025-11-25T10:12:25.432Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Student.cs",
               "DocumentMoniker": "D:\\StudentAttendance\\StudentAttendance\\Domain\\Models\\Student.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\Student.cs",
@@ -233,11 +258,12 @@
               "RelativeToolTip": "Domain\\Models\\Student.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T10:12:08.109Z"
+              "WhenOpened": "2025-11-25T10:12:08.109Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Person.cs",
               "DocumentMoniker": "D:\\StudentAttendance\\StudentAttendance\\Domain\\Models\\Person.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\Person.cs",
@@ -249,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\StudentAttendance\\StudentAttendance\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -257,7 +283,8 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T10:11:04.461Z"
+              "WhenOpened": "2025-11-25T10:11:04.461Z",
+              "EditorCaption": ""
             }
           ]
         }
