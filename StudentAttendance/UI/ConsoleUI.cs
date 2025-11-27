@@ -24,20 +24,19 @@ namespace UI
             while (true)
             {
                 Console.WriteLine("\nМеню:");
-                Console.WriteLine("1 - Список студентов");
-                Console.WriteLine("2 - Добавить студента");
-                Console.WriteLine("3 - Отметить посещаемость");
-                Console.WriteLine("4 - Худшие по посещаемости");
-                Console.WriteLine("5 - Отчет по группам");
-                Console.WriteLine("6 - Список групп");
-                Console.WriteLine("7 - Добавить группу");
-                Console.WriteLine("8 - Редактировать студента");
-                Console.WriteLine("9 - Удалить студента");
-                Console.WriteLine("10 - Редактировать группу по имени");
-                Console.WriteLine("11 - Удалить группу");
-                Console.WriteLine("12 - Выход");
-                Console.WriteLine("13 - Выход");
-                Console.Write("Выбор: ");
+                Console.WriteLine("1 - Список студентів");
+                Console.WriteLine("2 - Додати студента");
+                Console.WriteLine("3 - Відзначити відвідуваність");
+                Console.WriteLine("4 - Найгірші за відвідуваністю");
+                Console.WriteLine("5 - Звіт по групах");
+                Console.WriteLine("6 - Список груп");
+                Console.WriteLine("7 - Додати групу");
+                Console.WriteLine("8 - Редагувати студента");
+                Console.WriteLine("9 - Видалити студента");
+                Console.WriteLine("10 - Редагувати групу за назвою");
+                Console.WriteLine("11 - Видалити групу");
+                Console.WriteLine("0 - Вихід");
+                Console.Write("Вибір: ");
 
                 var choice = Console.ReadLine();
 
@@ -48,9 +47,9 @@ namespace UI
                         break;
 
                     case "2":
-                        Console.Write("Имя студента: ");
+                        Console.Write("Ім'я студента: ");
                         string fullName = Console.ReadLine()!;
-                        Console.Write("Группа (имя или ID): ");
+                        Console.Write("Група: ");
                         string groupInput = Console.ReadLine()!;
                         _studentService.AddStudent(fullName, groupInput);
                         break;
@@ -59,20 +58,20 @@ namespace UI
                         Console.Write("ID студента: ");
                         if (!int.TryParse(Console.ReadLine(), out int sid))
                         {
-                            Console.WriteLine("Неверный ID студента.");
+                            Console.WriteLine("Неправильний ID студента.");
                             break;
                         }
 
                         var student = _studentService.GetStudentById(sid);
                         if (student == null)
                         {
-                            Console.WriteLine("Студент не найден.");
+                            Console.WriteLine("Студент не знайдений.");
                             break;
                         }
 
-                        Console.Write("Тема занятия: ");
+                        Console.Write("Заняття: ");
                         string topic = Console.ReadLine()!;
-                        Console.Write("Присутствовал? (y/n): ");
+                        Console.Write("Був присутній? (y/n): ");
                         bool present = Console.ReadLine()!.Trim().ToLower() == "y";
 
                         // Передаем groupId студента
@@ -89,14 +88,14 @@ namespace UI
                     case "5":
                         var report = _attendanceService.ReportByGroup();
 
-                        Console.WriteLine("\nОтчёт по группам:");
+                        Console.WriteLine("\nЗвіт по групах:");
 
                         string filePath = "GroupReport.txt"; // имя файла
                         using (var writer = new StreamWriter(filePath, false)) // false = перезаписываем файл
                         {
                             foreach (var (group, avg, members) in report)
                             {
-                                string header = $"\nГруппа: {group.Name}\nСредняя посещаемость: {avg:F2}%\nСтуденты:";
+                                string header = $"\nГрупа: {group.Name}\nСередня відвідуваність: {avg:F2}%\nСтуденти:";
                                 Console.WriteLine(header);
                                 writer.WriteLine(header);
 
@@ -109,7 +108,7 @@ namespace UI
                             }
                         }
 
-                        Console.WriteLine($"\nОтчёт сохранён в файл '{filePath}'");
+                        Console.WriteLine($"\nЗвіт збережено у файл '{filePath}'");
                         break;
 
 
@@ -118,38 +117,38 @@ namespace UI
                         break;
 
                     case "7":
-                        Console.Write("Название группы: ");
+                        Console.Write("Назва групи: ");
                         string groupName = Console.ReadLine()!;
                         _groupService.AddGroup(groupName);
                         break;
 
                     case "8": // Новый пункт "Редактировать студента"
-                        Console.Write("ID студента для редактирования: ");
+                        Console.Write("ID студента для редагування: ");
                         int editId = int.Parse(Console.ReadLine()!);
-                        Console.Write("Новое имя (Enter чтобы пропустить): ");
+                        Console.Write("Нове ім'я (Enter, щоб пропустити): ");
                         string? newName = Console.ReadLine();
-                        Console.Write("Новая группа (имя или ID, Enter чтобы пропустить): ");
+                        Console.Write("Нова група (ім'я або ID, Enter, щоб пропустити): ");
                         string? newGroup = Console.ReadLine();
                         _studentService.EditStudent(editId, newName, newGroup);
                         break;
 
                     case "9": // Удалить студента
-                        Console.Write("ID студента для удаления: ");
+                        Console.Write("ID студента для видалення: ");
                         int delId = int.Parse(Console.ReadLine()!);
                         _studentService.DeleteStudent(delId);
                         break;
 
                     case "10": // Редактировать группу по имени
-                        Console.Write("Введите текущее имя группы: ");
+                        Console.Write("Введіть поточну назву групи: ");
                         string currentName = Console.ReadLine()!;
-                        Console.Write("Введите новое имя группы: ");
+                        Console.Write("Введіть нову назву групи: ");
                         string newGroupName = Console.ReadLine()!; // <--- новое имя переменной
                         _groupService.EditGroupByName(currentName, newGroupName);
                         break;
 
 
                     case "11": // Удалить группу
-                        Console.Write("ID группы для удаления: ");
+                        Console.Write("ID групи для видалення: ");
                         int delGid = int.Parse(Console.ReadLine()!);
                         _groupService.DeleteGroup(delGid);
                         break;

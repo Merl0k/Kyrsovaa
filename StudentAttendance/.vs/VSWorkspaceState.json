@@ -10,6 +10,6 @@
     "\\Services",
     "\\UI"
   ],
-  "SelectedNode": "\\UI\\ConsoleUI.cs",
+  "SelectedNode": "\\Services\\AttendanceService.cs",
   "PreviewInSolutionExplorer": false
 }

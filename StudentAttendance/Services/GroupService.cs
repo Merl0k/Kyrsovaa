@@ -13,7 +13,7 @@ namespace Services
         public void ListGroups()
         {
             var groups = _db.Groups.ToList();
-            if (!groups.Any()) { Console.WriteLine("Нет групп"); return; }
+            if (!groups.Any()) { Console.WriteLine("Немає груп"); return; }
 
             foreach (var g in groups)
                 Console.WriteLine($"{g.Id}: {g.Name}");
@@ -23,7 +23,7 @@ namespace Services
         {
             _db.Groups.Add(new Group { Name = name });
             _db.SaveChanges();
-            Console.WriteLine($"Группа '{name}' успешно добавлена!");
+            Console.WriteLine($"Група '{name}' успішно додано!");
         }
 
         public void EditGroupByName(string currentName, string newName)
@@ -31,25 +31,25 @@ namespace Services
             var group = _db.Groups.FirstOrDefault(g => g.Name == currentName);
             if (group == null)
             {
-                Console.WriteLine($"Группа с именем '{currentName}' не найдена.");
+                Console.WriteLine($"Група з назвою '{currentName}' не знайдено.");
                 return;
             }
 
             group.Name = newName;
             _db.Groups.Update(group);
             _db.SaveChanges();
-            Console.WriteLine($"Группа '{currentName}' переименована в '{newName}'.");
+            Console.WriteLine($"Група '{currentName}' перейменована в '{newName}'.");
         }
 
 
         public void DeleteGroup(int id)
         {
             var group = _db.Groups.Find(id);
-            if (group == null) { Console.WriteLine("Группа не найдена"); return; }
+            if (group == null) { Console.WriteLine("Група не знайдена"); return; }
 
             _db.Groups.Remove(group);
             _db.SaveChanges();
-            Console.WriteLine("Группа удалена!");
+            Console.WriteLine("Група видалена!");
         }
 
         public Group? GetGroupById(int id) => _db.Groups.Find(id);

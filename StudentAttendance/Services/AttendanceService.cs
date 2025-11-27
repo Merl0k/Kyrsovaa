@@ -74,7 +74,7 @@ namespace Services
                 };
                 _db.ClassSessions.Add(session);
                 _db.SaveChanges();
-                Console.WriteLine($"Создано новое занятие: '{topic}' для группы {groupId}");
+                Console.WriteLine($"Створено нове заняття: '{topic}' для групи {groupId}");
             }
 
             // Теперь отмечаем посещаемость
@@ -91,7 +91,7 @@ namespace Services
             }
 
             _db.SaveChanges();
-            Console.WriteLine("Посещаемость успешно отмечена!");
+            Console.WriteLine("Відвідуваність успішно відзначена!");
         }
 
 
@@ -142,7 +142,7 @@ namespace Services
         public void ShowWorstAttendance(int top = 5)
         {
             var worst = GetWorstStudents(top);
-            Console.WriteLine($"\nХудшие {top} по посещаемости:");
+            Console.WriteLine($"\nНайгірші {top} за відвідуваністю:");
 
             foreach (var (student, percent) in worst)
             {
@@ -154,13 +154,13 @@ namespace Services
         {
             var report = ReportByGroup();
 
-            Console.WriteLine("\nОтчёт по группам:");
+            Console.WriteLine("\nЗвіт по групах:");
 
             foreach (var (group, avg, members) in report)
             {
-                Console.WriteLine($"\nГруппа: {group.Name}");
-                Console.WriteLine($"Средняя посещаемость: {avg:F2}%");
-                Console.WriteLine("Студенты:");
+                Console.WriteLine($"\nГрупа: {group.Name}");
+                Console.WriteLine($"Середня відвідуваність: {avg:F2}%");
+                Console.WriteLine("Студенти:");
 
                 foreach (var (student, percent) in members)
                     Console.WriteLine($"  {student.FullName} — {percent:F2}%");
