@@ -7,10 +7,9 @@
     "\\Domain\\Models",
     "\\Infrastructure",
     "\\Infrastructure\\Repositories",
-    "\\Migrations",
     "\\Services",
     "\\UI"
   ],
-  "SelectedNode": "\\student_attendance.db-shm",
+  "SelectedNode": "\\GroupReport.txt",
   "PreviewInSolutionExplorer": false
 }

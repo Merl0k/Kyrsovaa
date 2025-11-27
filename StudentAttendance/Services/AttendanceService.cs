@@ -18,7 +18,7 @@ namespace Services
             _db = db;
         }
 
-        // CRUD Students
+        // CRUD Students (часть функционала уже есть в StudentService, но здесь тоже есть для полноты)
         public IEnumerable<Student> GetAllStudents() =>
             _db.Students.Include(s => s.Group).ToList();
 
@@ -58,12 +58,30 @@ namespace Services
         }
 
         // Attendance marking
-        public void MarkAttendance(int sessionId, int studentId, bool present)
+        public void MarkAttendanceByTopic(string topic, int studentId, bool present, int groupId)
         {
-            var att = _db.Attendances.FirstOrDefault(a => a.ClassSessionId == sessionId && a.StudentId == studentId);
+            // Ищем занятие по теме
+            var session = _db.ClassSessions.FirstOrDefault(s => s.Topic == topic && s.GroupId == groupId);
+
+            // Если занятия нет, создаём его автоматически
+            if (session == null)
+            {
+                session = new ClassSession
+                {
+                    Topic = topic,
+                    GroupId = groupId,
+                    Date = DateTime.Now // Можно использовать текущую дату
+                };
+                _db.ClassSessions.Add(session);
+                _db.SaveChanges();
+                Console.WriteLine($"Создано новое занятие: '{topic}' для группы {groupId}");
+            }
+
+            // Теперь отмечаем посещаемость
+            var att = _db.Attendances.FirstOrDefault(a => a.ClassSessionId == session.Id && a.StudentId == studentId);
             if (att == null)
             {
-                att = new Attendance { ClassSessionId = sessionId, StudentId = studentId, IsPresent = present };
+                att = new Attendance { ClassSessionId = session.Id, StudentId = studentId, IsPresent = present };
                 _db.Attendances.Add(att);
             }
             else
@@ -71,8 +89,13 @@ namespace Services
                 att.IsPresent = present;
                 _db.Attendances.Update(att);
             }
+
             _db.SaveChanges();
+            Console.WriteLine("Посещаемость успешно отмечена!");
         }
+
+
+
 
         // Reports
         public double GetStudentAttendancePercent(int studentId)
@@ -113,6 +136,34 @@ namespace Services
 
                 var avg = members.Any() ? members.Average(m => m.percent) : 0.0;
                 yield return (g, avg, members);
+            }
+        }
+
+        public void ShowWorstAttendance(int top = 5)
+        {
+            var worst = GetWorstStudents(top);
+            Console.WriteLine($"\nХудшие {top} по посещаемости:");
+
+            foreach (var (student, percent) in worst)
+            {
+                Console.WriteLine($"{student.FullName} — {percent:F2}%");
+            }
+        }
+
+        public void ReportByGroups()
+        {
+            var report = ReportByGroup();
+
+            Console.WriteLine("\nОтчёт по группам:");
+
+            foreach (var (group, avg, members) in report)
+            {
+                Console.WriteLine($"\nГруппа: {group.Name}");
+                Console.WriteLine($"Средняя посещаемость: {avg:F2}%");
+                Console.WriteLine("Студенты:");
+
+                foreach (var (student, percent) in members)
+                    Console.WriteLine($"  {student.FullName} — {percent:F2}%");
             }
         }
     }
